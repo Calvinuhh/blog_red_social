@@ -1,11 +1,31 @@
 {
-  "name": "server_red_social",
+  "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "description": "",
+  "main": "index",
   "scripts": {
+    "dev": "nodemon --env-file .env build/index.js",
+    "start": "node build/index.js",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "prettier": "3.3.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
 }
