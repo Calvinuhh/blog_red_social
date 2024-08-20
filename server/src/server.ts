@@ -1,5 +1,7 @@
 import express from "express";
 import router from "./routes/index";
+import swaggerUi from "swagger-ui-express";
+import swaggerSetup from "./docs/swagger";
 
 console.log("server.ts");
 
@@ -9,8 +11,8 @@ const server = express();
 
 server.use(express.json()); //middleware post
 server.use(express.urlencoded({ extended: true }));
-//Use the router for manage the routes
-
 server.use('/api',router);
+server.use("/docs", swaggerUi.serve);
+server.get("/docs", swaggerUi.setup(swaggerSetup));
 
 export default server;
