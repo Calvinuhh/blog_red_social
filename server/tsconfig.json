@@ -86,5 +86,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,    
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/types/bcryptjs.d.ts",
+    "src/types/jsonwebtoken.d.ts"
+  ]
 }

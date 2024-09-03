@@ -3,8 +3,6 @@ import router from "./routes/index";
 import swaggerUi from "swagger-ui-express";
 import swaggerSetup from "./docs/swagger";
 
-console.log("server.ts");
-
 // const { FRONT_END_URL } = process.env;
 
 const server = express();

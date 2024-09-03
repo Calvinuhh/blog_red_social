@@ -1,7 +1,7 @@
 import { Router} from "express";
+import { registerHandler, getAllUsersHandler} from "../handlers/userHandler";
 
 const userRouter = Router();
-
 /**
  * @swagger
  * /user:
@@ -69,13 +69,9 @@ const userRouter = Router();
  *       - bearerAuth: []
  */
 
-userRouter.get('/', (_req, res) => {
-  res.json({ message: 'Get user data' });
-});
+userRouter.get('/', getAllUsersHandler);
 
-userRouter.post('/', (_req, res) => {
-  res.status(201).json({ message: 'User created successfully' });
-});
+userRouter.post('/register', registerHandler);
 
 userRouter.put("/", (_req, res) => {
   res.send("Hello from put user router");
