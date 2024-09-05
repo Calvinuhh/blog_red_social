@@ -1,8 +1,8 @@
 import { Router } from "express";
+import userRouter from "./userRouter";
 //import endpointRouter from './endpointRouter'
 
 const router = Router();
-console.log(Router)
 
 router.use((_req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -10,12 +10,9 @@ router.use((_req, res, next) => {
   next();
 });
 
-router.use("/", (_req, res) => {
-  console.log("someone pinged here");
-  res.send("Hello World!");
-});
-
 // Here we define the routes
 //router.use('/endpoint', endpointRouter)
+router.use("/user", userRouter);
+
 
 export default router;

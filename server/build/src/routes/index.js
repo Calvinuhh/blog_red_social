@@ -1,16 +1,19 @@
-import { Router } from "express";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const userRouter_1 = __importDefault(require("./userRouter"));
 //import endpointRouter from './endpointRouter'
-const router = Router();
-console.log(Router);
+const router = (0, express_1.Router)();
+console.log(express_1.Router);
 router.use((_req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     next();
 });
-router.use("/", (_req, res) => {
-    console.log("someone pinged here");
-    res.send("Hello World!");
-});
 // Here we define the routes
 //router.use('/endpoint', endpointRouter)
-export default router;
+router.use("/user", userRouter_1.default);
+exports.default = router;
